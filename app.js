@@ -29,8 +29,12 @@ req.onload = function () {
   let data = JSON.parse(this.response);
   let hepsi = data.Global;
   let turk = data.Countries.filter(item => item.Country == 'Turkey')[0];
-  console.log(hepsi);
-  console.log(turk);
+
+
+
+  // console.log(hepsi);
+  // console.log(turk);
+
   /* hepsi.forEach(item => {
     const li = document.createElement("li");
     li.textContent = item.value
