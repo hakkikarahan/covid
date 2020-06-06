@@ -1,4 +1,4 @@
-.list {
+/* .list {
   margin: 0;
   padding-left: 1.2rem;
 }
@@ -23,4 +23,92 @@
     border-color: #00a8a8;
     transform-origin: bottom left;
     transform: rotate(45deg);
+} */
+
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.logo{
+  display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    width:200px;  
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+}
+
+#global{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* max-width: 200px; */
+  
+}
+
+#turkey{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.card2, .card {
+  cursor: pointer;
+  /* font-size: 2rem; */
+  font-weight: bold;
+  /* color: bisque; */
+  margin: 0.5rem;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .5);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.card2:hover, .card:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .6);
+  transform: translate3D(0, -3px, 0);
+}
+
+/* .card:nth-child(2n) {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.card:nth-child(4n) {
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.card:nth-child(5n) {
+  background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+} */
+
+
+
+/* 
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+} */
