@@ -37,8 +37,8 @@ req.onload = function () {
 
 
 
-  // console.log(hepsi);
-  // console.log(turk);
+  /*  console.log(hepsi);
+   console.log(turk); */
 
   /* hepsi.forEach(item => {
     const li = document.createElement("li");
@@ -52,7 +52,18 @@ req.onload = function () {
 
   // for (var [key, val] of Object.entries(hepsi)) {
   let i = 0;
+  let toplamVaka;
+  let toplamOlum;
+  let toplamIyilesen;
+
   for (var val in hepsi) {
+    if (val == 'TotalConfirmed') {
+      toplamVaka = hepsi[val];
+    } else if (val == 'TotalDeaths') {
+      toplamOlum = hepsi[val];
+    } else if (val == 'TotalRecovered') {
+      toplamIyilesen = hepsi[val];
+    }
 
     // const liw = document.createElement("li");
     // liw.textContent = `${val}: ${hepsi[val]}`
@@ -63,11 +74,33 @@ req.onload = function () {
     divh.setAttribute('class', 'card');
     divh.textContent = `${trhepsi[i]}: ${hepsi[val]}`
     global.appendChild(divh);
+    // console.log(Object.keys(hepsi).length);
+
     i++;
+
+    if (i == Object.keys(hepsi).length) {
+      const dive = document.createElement('div');
+
+      dive.setAttribute('class', 'card');
+      dive.textContent = `Aktif Vaka: ${toplamVaka - toplamOlum - toplamIyilesen}`
+      global.appendChild(dive);
+    }
+
   }
 
   i = 0;
   for (val in turk) {
+    if (val == 'TotalConfirmed') {
+      toplamVaka = turk[val];
+    } else if (val == 'TotalDeaths') {
+      toplamOlum = turk[val];
+    } else if (val == 'TotalRecovered') {
+      toplamIyilesen = turk[val];
+    } else if (val == 'Slug') {
+      i++;
+      continue;
+    }
+
     const divt = document.createElement('div');
     divt.setAttribute('class', 'card2');
     divt.textContent = `${trturk[i]}: ${turk[val]}`;
@@ -77,6 +110,13 @@ req.onload = function () {
     lit.textContent = `${val}: ${turk[val]}`;
     turkey.appendChild(lit); */
     i++;
+    if (i == Object.keys(turk).length) {
+      const dive = document.createElement('div');
+
+      dive.setAttribute('class', 'card2');
+      dive.textContent = `Aktif Vaka: ${toplamVaka - toplamOlum - toplamIyilesen}`
+      turkey.appendChild(dive);
+    }
   }
 
 
