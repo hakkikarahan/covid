@@ -32,7 +32,7 @@ req.onload = function () {
   let hepsi = data.Global;
   let turk = data.Countries.filter(item => item.Country == 'Turkey')[0];
 
-  console.log(turk);
+  // console.log(turk);
 
 
 
